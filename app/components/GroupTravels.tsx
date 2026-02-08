@@ -5,8 +5,19 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, MapPin, Calendar, X, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 
-// Data with FULL DETAILS (Paste PDF text here later)
-const TRIPS = [
+// 1. Define the "Trip" type so TypeScript knows what to expect
+interface Trip {
+  id: number;
+  title: string;
+  location: string;
+  date: string;
+  image: string;
+  price: string;
+  description: string;
+  itinerary: string[];
+}
+
+const TRIPS: Trip[] = [
   {
     id: 1,
     title: "The Himalayan Escape", 
@@ -73,7 +84,9 @@ const TRIPS = [
 ];
 
 const GroupTravels = () => {
-  const [selectedTrip, setSelectedTrip] = useState(null);
+  // 2. FIXED: Use the Trip interface in useState
+  const [selectedTrip, setSelectedTrip] = useState<Trip | null>(null);
+  
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -147,7 +160,7 @@ const GroupTravels = () => {
               >
                 {/* Modal Image Header */}
                 <div className="relative h-64 w-full">
-                  <img src={selectedTrip.image} className="h-full w-full object-cover" />
+                  <img src={selectedTrip.image} className="h-full w-full object-cover" alt={selectedTrip.title} />
                   <button 
                     onClick={() => setSelectedTrip(null)}
                     className="absolute top-4 right-4 rounded-full bg-black/50 p-2 text-white hover:bg-black/70"
