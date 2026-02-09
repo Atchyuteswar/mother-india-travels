@@ -5,103 +5,77 @@ import { motion, Variants } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
-  // 1. Explicitly type these as 'Variants' to fix the build error
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.3, delayChildren: 0.2 } },
   };
 
   const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 100 },
-    },
+    hidden: { y: 30, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 60, damping: 20 } },
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-neutral-900">
-      {/* 1. Background Image/Video */}
+    <div className="relative h-screen w-full overflow-hidden bg-[#F4EBD9]">
+      
+      {/* 1. Background Texture - Faded Watermark Style */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop"
-          alt="Mother India Travels Background"
-          className="h-full w-full object-cover opacity-60"
+          alt="Vintage India"
+          className="h-full w-full object-cover opacity-15 sepia filter grayscale-[0.3]" 
         />
-        {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent" />
+        {/* Soft Vignette around edges to focus on text */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F4EBD9] via-transparent to-[#F4EBD9]/60" />
       </div>
 
-      {/* 2. Content Container */}
+      {/* 2. Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="max-w-4xl"
-        >
-          {/* Pill Label - Android 16 Style */}
-          <motion.div variants={itemVariants} className="mb-6 flex justify-center">
-            <span className="rounded-full bg-orange-500/20 px-4 py-1.5 text-sm font-medium text-orange-300 backdrop-blur-md border border-orange-500/30">
-              Mother India Travels
-            </span>
-          </motion.div>
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-5xl">
 
-          {/* Main Headline */}
+          {/* Main Headline - The "Indian" Look */}
           <motion.h1 
             variants={itemVariants}
-            className="mb-6 font-sans text-5xl font-bold tracking-tight text-white sm:text-7xl md:text-8xl"
+            className="mb-6 mt-6 font-heading text-6xl text-[#4A3B32] sm:text-8xl md:text-[7rem] leading-[1.1] drop-shadow-sm"
           >
             Not Just Seeing, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+            <span className="text-[#B45309] italic">
               But Experiencing.
             </span>
           </motion.h1>
 
-          {/* Subheadline from Docs */}
+          {/* Subheadline - Elegant Serif */}
           <motion.p 
             variants={itemVariants}
-            className="mx-auto mb-10 max-w-2xl text-lg text-neutral-200 sm:text-xl"
+            className="mx-auto mb-12 max-w-2xl font-body text-2xl md:text-3xl text-[#4A3B32]/90 leading-relaxed italic"
           >
-            Discover the soul of India through our curated cultural immersions and personalized group retreats.
+            "Discover the soul of India through our curated cultural immersions and personalized group retreats."
           </motion.p>
 
-          {/* CTA Buttons - Android 16 "Pill" Shapes */}
-          <motion.div 
-            variants={itemVariants}
-            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
-          >
-            <button className="group relative overflow-hidden rounded-[28px] bg-white px-8 py-4 text-lg font-semibold text-black transition-transform hover:scale-105 active:scale-95">
-              <span className="relative z-10">Plan My Journey</span>
-              <div className="absolute inset-0 -translate-x-full bg-orange-100 transition-transform duration-300 group-hover:translate-x-0" />
+          {/* Buttons - Classic & Minimal */}
+          <motion.div variants={itemVariants} className="flex flex-col items-center justify-center gap-6 sm:flex-row font-body">
+            
+            <button className="rounded-none border-b-2 border-[#D97706] bg-transparent pb-1 text-xl font-bold text-[#D97706] transition-all hover:text-[#4A3B32] hover:border-[#4A3B32]">
+              Plan My Journey &rarr;
             </button>
             
-            <button className="rounded-[28px] border border-white/20 bg-white/5 px-8 py-4 text-lg font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40 active:scale-95">
+            <button className="text-lg text-[#4A3B32]/70 hover:text-[#4A3B32] transition-colors underline underline-offset-4 decoration-1">
               View Upcoming Trips
             </button>
+
           </motion.div>
         </motion.div>
       </div>
 
-      {/* 3. Scroll Indicator */}
+      {/* Scroll Indicator - Minimal */}
       <motion.div 
-        initial={{ opacity: 0, y: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ delay: 1.5, duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-white/50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 8, 0] }}
+        transition={{ delay: 1.5, duration: 3, repeat: Infinity }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 text-[#4A3B32]/40"
       >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs uppercase tracking-widest">Explore</span>
-          <ArrowDown className="h-6 w-6" />
-        </div>
+        <ArrowDown className="h-5 w-5" />
       </motion.div>
     </div>
   );

@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { ArrowRight, MapPin, Calendar, X, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, MapPin, Calendar, X, Stamp } from 'lucide-react';
 import Link from 'next/link';
 
-// 1. Define the "Trip" type so TypeScript knows what to expect
 interface Trip {
   id: number;
   title: string;
@@ -17,6 +16,7 @@ interface Trip {
   itinerary: string[];
 }
 
+// Data remains the same...
 const TRIPS: Trip[] = [
   {
     id: 1,
@@ -26,13 +26,7 @@ const TRIPS: Trip[] = [
     image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2000&auto=format&fit=crop", 
     price: "₹18,999",
     description: "Experience the serene beauty of the Himalayas. From the bustling streets of Manali to the quiet solitude of Spiti Valley.",
-    itinerary: [
-      "Day 1: Arrival in Manali. Acclimatization walk.",
-      "Day 2: Drive to Rohtang Pass. Snow activities.",
-      "Day 3: Camping at Chandratal Lake.",
-      "Day 4: Visit Key Monastery and Kibber Village.",
-      "Day 5: Return drive with scenic stops."
-    ]
+    itinerary: ["Day 1: Arrival in Manali", "Day 2: Rohtang Pass", "Day 3: Chandratal Lake", "Day 4: Key Monastery", "Day 5: Return"]
   },
   {
     id: 2,
@@ -42,12 +36,7 @@ const TRIPS: Trip[] = [
     image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=2000&auto=format&fit=crop",
     price: "₹12,499",
     description: "Witness the oldest living city in the world. attending the Ganga Aarti and boat rides at sunrise.",
-    itinerary: [
-      "Day 1: Arrival and evening Ganga Aarti.",
-      "Day 2: Sunrise boat ride and temple tour.",
-      "Day 3: Sarnath excursion and silk weaving tour.",
-      "Day 4: Departure."
-    ]
+    itinerary: ["Day 1: Ganga Aarti", "Day 2: Sunrise Boat Ride", "Day 3: Sarnath Tour", "Day 4: Departure"]
   },
   {
     id: 3,
@@ -57,13 +46,7 @@ const TRIPS: Trip[] = [
     image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=2000&auto=format&fit=crop",
     price: "₹24,999",
     description: "Live like royalty. Visit the Amber Fort, City Palace, and enjoy authentic Rajasthani cuisine.",
-    itinerary: [
-      "Day 1: Jaipur arrival. Chowki Dhani dinner.",
-      "Day 2: Amber Fort and Hawa Mahal.",
-      "Day 3: Drive to Udaipur via Pushkar.",
-      "Day 4: Udaipur City Palace and Lake Pichola.",
-      "Day 5: Shopping and Departure."
-    ]
+    itinerary: ["Day 1: Jaipur Arrival", "Day 2: Amber Fort", "Day 3: Drive to Udaipur", "Day 4: City Palace", "Day 5: Departure"]
   },
   {
     id: 4,
@@ -73,131 +56,120 @@ const TRIPS: Trip[] = [
     image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop",
     price: "₹21,000",
     description: "Relax on a houseboat as you drift through the palm-fringed canals of God's Own Country.",
-    itinerary: [
-      "Day 1: Kochi arrival and transfer to Munnar.",
-      "Day 2: Munnar Tea Gardens tour.",
-      "Day 3: Drive to Alleppey. Houseboat check-in.",
-      "Day 4: Backwater cruise and village walk.",
-      "Day 5: Departure from Kochi."
-    ]
+    itinerary: ["Day 1: Kochi Arrival", "Day 2: Munnar Tea Gardens", "Day 3: Houseboat Stay", "Day 4: Village Walk", "Day 5: Departure"]
   }
 ];
 
 const GroupTravels = () => {
-  // 2. FIXED: Use the Trip interface in useState
   const [selectedTrip, setSelectedTrip] = useState<Trip | null>(null);
-  
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="bg-neutral-900 py-20 text-white" ref={ref}>
-      <div className="mx-auto max-w-7xl px-4">
+    <section className="bg-[#F4EBD9] py-24 px-4">
+      <div className="mx-auto max-w-7xl">
         
-        {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end"
-        >
-          <div>
-            <h2 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
-              Upcoming <span className="text-orange-500">Group Trips</span>
-            </h2>
-            <p className="mt-2 text-neutral-400">Curated experiences for the wandering soul.</p>
+        {/* Header - Vintage Style */}
+        <div className="mb-16 text-center">
+          <div className="inline-flex items-center gap-2 border-b border-[#D97706] pb-1 mb-4">
+            <Stamp className="h-5 w-5 text-[#D97706]" />
+            <span className="font-body font-bold text-[#D97706] uppercase tracking-widest text-sm">Upcoming Departures</span>
           </div>
-        </motion.div>
+          <h2 className="font-heading text-5xl md:text-6xl text-[#4A3B32]">Journeys & Retreats</h2>
+        </div>
 
-        {/* Cards Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Postcard Grid */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {TRIPS.map((trip) => (
             <motion.div 
               key={trip.id}
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               onClick={() => setSelectedTrip(trip)}
-              className="group relative flex h-[400px] cursor-pointer flex-col justify-end overflow-hidden rounded-[32px] bg-neutral-800"
+              className="group cursor-pointer bg-white p-3 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:rotate-1 hover:shadow-2xl border border-[#4A3B32]/10"
             >
-              <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110">
-                <img src={trip.image} alt={trip.title} className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-              </div>
-              <div className="relative z-10 p-6">
-                <div className="mb-2 flex items-center gap-2 text-xs font-medium text-orange-400">
-                  <Calendar className="h-3 w-3" />
+              {/* Image Frame */}
+              <div className="relative h-64 overflow-hidden bg-gray-100 mb-4 border border-gray-200">
+                <img 
+                  src={trip.image} 
+                  alt={trip.title} 
+                  className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 sepia-[.4] group-hover:sepia-0" 
+                />
+                <div className="absolute top-2 right-2 bg-[#F4EBD9] px-2 py-1 text-xs font-bold text-[#4A3B32] shadow-sm">
                   {trip.date}
                 </div>
-                <h3 className="mb-1 text-xl font-bold text-white">{trip.title}</h3>
-                <div className="flex items-center justify-between border-t border-white/10 pt-4 mt-2">
-                  <span className="text-lg font-bold">{trip.price}</span>
-                  <div className="rounded-full bg-white p-2 text-black"><ArrowRight className="h-4 w-4" /></div>
+              </div>
+
+              {/* Text Content */}
+              <div className="text-center px-2 pb-2">
+                <h3 className="font-heading text-2xl text-[#4A3B32] mb-1 group-hover:text-[#D97706] transition-colors">
+                  {trip.title}
+                </h3>
+                <div className="flex justify-center items-center gap-2 text-[#4A3B32]/60 font-body text-sm italic mb-3">
+                  <MapPin className="h-3 w-3" />
+                  {trip.location}
+                </div>
+                <div className="border-t border-[#4A3B32]/10 pt-3 flex justify-between items-center">
+                  <span className="font-bold text-[#4A3B32] font-body text-lg">{trip.price}</span>
+                  <span className="text-xs uppercase tracking-widest text-[#D97706] font-bold border-b border-[#D97706]">View Details</span>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* MODAL POPUP */}
+        {/* MODAL (Same logic, updated style) */}
         <AnimatePresence>
           {selectedTrip && (
             <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-              {/* Backdrop */}
               <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setSelectedTrip(null)}
-                className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                className="absolute inset-0 bg-[#4A3B32]/60 backdrop-blur-sm"
               />
               
-              {/* Modal Content */}
               <motion.div 
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                className="relative z-10 max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[40px] bg-neutral-900 border border-white/10 shadow-2xl no-scrollbar"
+                layoutId={`trip-${selectedTrip.id}`}
+                className="relative z-10 max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-[#F4EBD9] p-2 shadow-2xl"
               >
-                {/* Modal Image Header */}
-                <div className="relative h-64 w-full">
-                  <img src={selectedTrip.image} className="h-full w-full object-cover" alt={selectedTrip.title} />
-                  <button 
-                    onClick={() => setSelectedTrip(null)}
-                    className="absolute top-4 right-4 rounded-full bg-black/50 p-2 text-white hover:bg-black/70"
-                  >
+                {/* Vintage Border Wrapper */}
+                <div className="border-2 border-double border-[#4A3B32]/20 p-6 h-full bg-[#F4EBD9]">
+                  
+                  <button onClick={() => setSelectedTrip(null)} className="absolute top-6 right-6 text-[#4A3B32] hover:text-[#D97706]">
                     <X className="h-6 w-6" />
                   </button>
-                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-neutral-900 to-transparent p-8">
-                    <h3 className="text-3xl font-bold text-white">{selectedTrip.title}</h3>
-                    <p className="text-orange-400 font-medium">{selectedTrip.date}</p>
-                  </div>
-                </div>
 
-                {/* Modal Body */}
-                <div className="p-8">
-                  <p className="text-lg text-neutral-300 mb-6">{selectedTrip.description}</p>
-                  
-                  <h4 className="text-xl font-bold text-white mb-4">Itinerary Highlights</h4>
-                  <ul className="space-y-3 mb-8">
+                  <div className="flex flex-col md:flex-row gap-6 mb-6">
+                    <img src={selectedTrip.image} className="w-full md:w-1/3 h-48 object-cover sepia-[.2] border border-[#4A3B32]/20 p-1 bg-white" />
+                    <div>
+                       <h3 className="font-heading text-4xl text-[#4A3B32] mb-2">{selectedTrip.title}</h3>
+                       <p className="font-body text-xl text-[#D97706] italic mb-4">{selectedTrip.date}</p>
+                       <p className="font-body text-lg text-[#4A3B32]/80 leading-relaxed">{selectedTrip.description}</p>
+                    </div>
+                  </div>
+
+                  <h4 className="font-heading text-2xl text-[#4A3B32] mb-4 border-b border-[#4A3B32]/10 pb-2">Itinerary</h4>
+                  <ul className="space-y-3 mb-8 font-body text-lg text-[#4A3B32]/80">
                     {selectedTrip.itinerary.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-neutral-400">
-                        <CheckCircle className="h-5 w-5 text-orange-500 shrink-0" />
-                        <span>{item}</span>
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="text-[#D97706] font-bold">Day {i+1}:</span> {item.split(': ')[1]}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex items-center justify-between border-t border-white/10 pt-6">
+                  <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#4A3B32]/10">
                     <div>
-                      <p className="text-sm text-neutral-500">Total Price</p>
-                      <p className="text-3xl font-bold text-white">{selectedTrip.price}</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-[#4A3B32]/50">Total Price</p>
+                      <p className="font-heading text-3xl text-[#4A3B32]">{selectedTrip.price}</p>
                     </div>
                     <Link href="/book">
-                      <button className="rounded-full bg-orange-600 px-8 py-3 font-bold text-white hover:bg-orange-700 transition-colors">
+                      <button className="bg-[#4A3B32] text-[#F4EBD9] px-8 py-3 font-bold uppercase tracking-widest hover:bg-[#D97706] transition-colors">
                         Book This Trip
                       </button>
                     </Link>
                   </div>
+
                 </div>
               </motion.div>
             </div>

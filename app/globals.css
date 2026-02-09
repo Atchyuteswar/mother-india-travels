@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+/* 1. Register SAMARKAN (Heading Font) */
+@font-face {
+  font-family: 'Samarkan';
+  /* Matches your folder structure exactly */
+  src: url('/fonts/Samarkan/samarkan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Register CORMORANT GARAMOND (Body Font) */
+/* Regular (400) */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium (500) */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/Cormorant_Garamond/static/CormorantGaramond-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* SemiBold (600) */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light (300) - Optional if you use light text */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. Define Theme Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F4EBD9;
+  --foreground: #4A3B32;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  /* CONNECT TAILWIND TO YOUR CUSTOM FONTS HERE */
+  --font-heading: 'Samarkan', serif; 
+  --font-body: 'Cormorant Garamond', serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Default to Cormorant Garamond for everything */
+  font-family: 'Cormorant Garamond', serif; 
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EBD9;
+}
+::-webkit-scrollbar-thumb {
+  background: #D97706;
+  border-radius: 5px;
+  border: 2px solid #F4EBD9;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4A3B32;
 }
