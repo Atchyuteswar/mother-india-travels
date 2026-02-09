@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import JournalSection from "./components/JournalSection";
 import InteractiveMap from "./components/InteractiveMap";
-
+import FeaturedTrips from "./components/FeaturedTrips";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,10 +14,10 @@ export default function Home() {
     <main className="min-h-screen bg-neutral-900">
       <Navbar />
       <HeroSection />
-      <InstagramGallery />
+      <FeaturedTrips />
       <InteractiveMap />
       <Features />
-      <GroupTravels />
+      <InstagramGallery />
       
       {/* Consultation Banner (Simple Text CTA) */}
       <section className="bg-orange-600 py-16 text-center">
