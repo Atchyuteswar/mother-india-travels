@@ -101,7 +101,7 @@ const GroupTravels = () => {
 
               {/* Text Content */}
               <div className="text-center px-2 pb-2">
-                <h3 className="font-heading text-2xl text-[#4A3B32] mb-1 group-hover:text-[#D97706] transition-colors">
+                <h3 className="font-body font-bold text-2xl text-[#4A3B32] mb-1 group-hover:text-[#D97706] transition-colors">
                   {trip.title}
                 </h3>
                 <div className="flex justify-center items-center gap-2 text-[#4A3B32]/60 font-body text-sm italic mb-3">

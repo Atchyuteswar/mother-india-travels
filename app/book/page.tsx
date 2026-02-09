@@ -1,96 +1,75 @@
 import React from 'react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import FAQ from "../components/FAQ"; // Make sure FAQ.tsx is updated first!
-import { Calendar, CheckCircle } from 'lucide-react';
+import { Feather, Send } from 'lucide-react';
 
-export default function Book() {
+export default function PersonalizedTrips() {
   return (
     <main className="min-h-screen bg-[#F4EBD9] text-[#4A3B32]">
       <Navbar />
-
+      
       {/* Header */}
-      <section className="pt-32 pb-16 px-6 text-center">
-        <h1 className="font-heading text-6xl md:text-8xl text-[#4A3B32] mb-6">Begin Your Journey</h1>
+      <section className="pt-32 pb-16 px-6 text-center border-b border-[#4A3B32]/10">
+        <h1 className="font-heading text-6xl md:text-8xl text-[#4A3B32] mb-6">Bespoke Journeys</h1>
         <p className="font-body text-2xl text-[#4A3B32]/70 max-w-2xl mx-auto italic">
-          "Reserve your place in history."
+          "Tell us your dreams, and we shall weave them into an itinerary."
         </p>
       </section>
 
-      <section className="py-12 px-6">
-        <div className="mx-auto max-w-5xl grid lg:grid-cols-2 gap-12">
+      {/* The "Paper Form" */}
+      <section className="py-20 px-6">
+        <div className="max-w-3xl mx-auto bg-[#F4EBD9] border-2 border-[#4A3B32]/20 p-8 md:p-12 shadow-2xl relative">
           
-          {/* Left: The Ledger Form */}
-          <div className="bg-white p-8 md:p-12 shadow-xl border-t-4 border-[#D97706]">
-            <h2 className="font-heading text-3xl text-[#4A3B32] mb-8">Reservation Request</h2>
-            
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block font-body font-bold text-[#4A3B32] mb-2">First Name</label>
-                  <input type="text" className="w-full bg-[#F4EBD9]/30 border border-[#4A3B32]/20 p-3 focus:border-[#D97706] focus:outline-none font-body" />
-                </div>
-                <div>
-                  <label className="block font-body font-bold text-[#4A3B32] mb-2">Last Name</label>
-                  <input type="text" className="w-full bg-[#F4EBD9]/30 border border-[#4A3B32]/20 p-3 focus:border-[#D97706] focus:outline-none font-body" />
-                </div>
-              </div>
+          {/* Decorative Corner */}
+          <div className="absolute top-4 left-4 w-16 h-16 border-t-2 border-l-2 border-[#D97706]" />
+          <div className="absolute bottom-4 right-4 w-16 h-16 border-b-2 border-r-2 border-[#D97706]" />
 
-              <div>
-                <label className="block font-body font-bold text-[#4A3B32] mb-2">Email Address</label>
-                <input type="email" className="w-full bg-[#F4EBD9]/30 border border-[#4A3B32]/20 p-3 focus:border-[#D97706] focus:outline-none font-body" />
-              </div>
+          <div className="flex items-center gap-3 mb-10 justify-center text-[#D97706]">
+            <Feather className="h-6 w-6" />
+            <span className="font-body font-bold uppercase tracking-widest text-sm">Trip Inquiry Form</span>
+          </div>
 
-              <div>
-                <label className="block font-body font-bold text-[#4A3B32] mb-2">Select Trip</label>
-                <select className="w-full bg-[#F4EBD9]/30 border border-[#4A3B32]/20 p-3 focus:border-[#D97706] focus:outline-none font-body text-[#4A3B32]">
-                  <option>Himalayan Escape (April)</option>
-                  <option>Spiritual Varanasi (May)</option>
-                  <option>Royal Rajasthan (Sept)</option>
-                  <option>Kerala Backwaters (Oct)</option>
-                </select>
+          <form className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="font-heading text-xl text-[#4A3B32]">Traveler's Name</label>
+                <input type="text" className="w-full bg-transparent border-b border-[#4A3B32]/40 py-2 focus:outline-none focus:border-[#D97706] font-body text-xl" />
               </div>
+              <div className="space-y-2">
+                <label className="font-heading text-xl text-[#4A3B32]">Email Address</label>
+                <input type="email" className="w-full bg-transparent border-b border-[#4A3B32]/40 py-2 focus:outline-none focus:border-[#D97706] font-body text-xl" />
+              </div>
+            </div>
 
-              <button className="w-full bg-[#4A3B32] text-[#F4EBD9] py-4 font-heading text-xl hover:bg-[#D97706] transition-colors mt-4">
-                Confirm Reservation
+            <div className="space-y-2">
+              <label className="font-heading text-xl text-[#4A3B32]">Destinations of Interest</label>
+              <select className="w-full bg-transparent border-b border-[#4A3B32]/40 py-2 focus:outline-none font-body text-xl text-[#4A3B32]">
+                <option>Rajasthan (Forts & Palaces)</option>
+                <option>Kerala (Backwaters & Tea)</option>
+                <option>Himalayas (Mountains & Peace)</option>
+                <option>Varanasi (Spirituality)</option>
+                <option>Other (Custom)</option>
+              </select>
+            </div>
+
+            <div className="space-y-2">
+              <label className="font-heading text-xl text-[#4A3B32]">Your Vision</label>
+              <textarea 
+                rows={4}
+                placeholder="Describe your dream trip..."
+                className="w-full bg-[#4A3B32]/5 border border-[#4A3B32]/20 p-4 focus:outline-none focus:border-[#D97706] font-body text-xl"
+              ></textarea>
+            </div>
+
+            <div className="text-center pt-6">
+              <button className="bg-[#4A3B32] text-[#F4EBD9] px-12 py-4 font-bold font-body text-lg uppercase tracking-widest hover:bg-[#D97706] transition-colors shadow-lg flex items-center gap-2 mx-auto">
+                Submit Request <Send className="h-4 w-4" />
               </button>
-              
-              <p className="text-center text-xs font-body uppercase tracking-widest text-[#4A3B32]/40 mt-4">
-                Secure Booking • No Payment Required Yet
-              </p>
-            </form>
-          </div>
-
-          {/* Right: Trust Indicators */}
-          <div className="flex flex-col justify-center space-y-8">
-             <div className="bg-[#E6D5C0] p-8 border border-[#4A3B32]/10">
-               <h3 className="font-heading text-2xl text-[#4A3B32] mb-4">Why Book With Us?</h3>
-               <ul className="space-y-4 font-body text-lg text-[#4A3B32]/80">
-                 <li className="flex items-center gap-3">
-                   <CheckCircle className="h-5 w-5 text-[#D97706]" /> Small groups (Max 12 people)
-                 </li>
-                 <li className="flex items-center gap-3">
-                   <CheckCircle className="h-5 w-5 text-[#D97706]" /> Hand-picked heritage stays
-                 </li>
-                 <li className="flex items-center gap-3">
-                   <CheckCircle className="h-5 w-5 text-[#D97706]" /> 24/7 Support from Founders
-                 </li>
-               </ul>
-             </div>
-
-             <div className="text-center p-8 border-2 border-dashed border-[#4A3B32]/20">
-               <Calendar className="h-10 w-10 text-[#D97706] mx-auto mb-4" />
-               <p className="font-body text-xl text-[#4A3B32] italic">
-                 "Travel is the only thing you buy that makes you richer."
-               </p>
-             </div>
-          </div>
+            </div>
+          </form>
 
         </div>
       </section>
-
-      {/* Add the FAQ Section here */}
-      <FAQ />
 
       <Footer />
     </main>

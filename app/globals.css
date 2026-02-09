@@ -65,8 +65,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
-  /* CONNECT TAILWIND TO YOUR CUSTOM FONTS HERE */
   --font-heading: 'Samarkan', serif; 
   --font-body: 'Cormorant Garamond', serif;
 }

@@ -14,11 +14,19 @@ export default {
         saffron: "#D97706",
       },
       fontFamily: {
-        // This connects class="font-heading" to Samarkan
         heading: ["Samarkan", "serif"], 
-        // This connects class="font-body" to Cormorant Garamond
         body: ["Cormorant Garamond", "serif"],
       },
+      // ADD THIS SECTION FOR ANIMATIONS
+      keyframes: {
+        drift: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
+        }
+      },
+      animation: {
+        drift: 'drift 20s linear infinite',
+      }
     },
   },
   plugins: [],

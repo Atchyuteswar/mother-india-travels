@@ -55,7 +55,7 @@ const Features = () => {
               </div>
 
               {/* Title */}
-              <h3 className="mb-4 font-heading text-2xl text-[#4A3B32]">
+              <h3 className="mb-4 font-body font-bold text-2xl text-[#4A3B32]">
                 {feature.title}
               </h3>
 

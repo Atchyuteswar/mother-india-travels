@@ -41,9 +41,6 @@ const JournalSection = () => {
             </div>
             <h2 className="font-heading text-5xl text-[#4A3B32]">Stories from the Road</h2>
           </div>
-          <button className="hidden md:flex items-center gap-2 text-[#4A3B32] font-bold hover:text-[#D97706] transition-colors border-b border-transparent hover:border-[#D97706]">
-            View All Entries <ArrowRight className="h-4 w-4" />
-          </button>
         </div>
 
         {/* Articles Grid */}
@@ -67,7 +64,7 @@ const JournalSection = () => {
               </div>
 
               {/* Title */}
-              <h3 className="mb-3 font-heading text-3xl text-[#4A3B32] group-hover:text-[#D97706] transition-colors leading-tight">
+              <h3 className="mb-3 font-body font-bold text-3xl text-[#4A3B32] group-hover:text-[#D97706] transition-colors leading-tight">
                 {article.title}
               </h3>
 

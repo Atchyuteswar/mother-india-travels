@@ -32,7 +32,7 @@ const Navbar = () => {
 
         {/* Desktop Menu - Cormorant Font */}
         <div className="hidden md:flex items-center gap-10">
-          {['Home', 'Personalized Trips', 'Experience', 'About Us'].map((item) => (
+          {['About Us', 'Experience'].map((item) => (
              <Link 
                key={item}
                href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} 
