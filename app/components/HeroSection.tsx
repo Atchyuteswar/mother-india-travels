@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
-  // Animation variants for staggered text entry
-  const containerVariants = {
+  // 1. Explicitly type these as 'Variants' to fix the build error
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -17,7 +17,7 @@ const HeroSection = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -28,10 +28,10 @@ const HeroSection = () => {
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-neutral-900">
-      {/* 1. Background Image/Video (Replace with Client's Instagram Reel/Post) */}
+      {/* 1. Background Image/Video */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop" // Placeholder: Varanasi/India vibe
+          src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop"
           alt="Mother India Travels Background"
           className="h-full w-full object-cover opacity-60"
         />
