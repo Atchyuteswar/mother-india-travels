@@ -66,7 +66,7 @@ const Navbar = () => {
             className="md:hidden bg-[#F4EBD9] border-b border-[#4A3B32]/20 overflow-hidden"
           >
             <div className="flex flex-col gap-6 p-8 text-center">
-              {['Home', 'Personalized Trips', 'Experience', 'About Us'].map((item) => (
+              {['About Us', 'Experience'].map((item) => (
                 <Link 
                   key={item}
                   href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
