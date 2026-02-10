@@ -6,7 +6,7 @@ import { MessageCircle } from 'lucide-react';
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/919876543210" // Replace with real number
+      href="https://wa.me/919557908816" // Replace with real number
       target="_blank"
       rel="noopener noreferrer"
       // Changed to Gold/Saffron branding with Sepia Text
