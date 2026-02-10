@@ -75,7 +75,7 @@ export default function Experience() {
       <Navbar />
       
       {/* 1. HERO: THE PROMISE + HIGHLIGHTS INTEGRATED */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden border-b border-[#4A3B32]/10">
+      <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
         
         {/* Background Image & Overlays */}
         <div className="absolute inset-0 z-0">
@@ -194,7 +194,7 @@ export default function Experience() {
               <h2 className="font-heading text-5xl">The Visual Diary</h2>
               <p className="font-body text-xl opacity-60 italic">@motherindiatravels</p>
             </div>
-            <a href="https://instagram.com" className="hidden md:flex items-center gap-2 border border-[#D97706] px-6 py-2 hover:bg-[#D97706] hover:text-[#4A3B32] transition-colors">
+            <a href="https://www.instagram.com/motherindiatravels/" className="hidden md:flex items-center gap-2 border border-[#D97706] px-6 py-2 hover:bg-[#D97706] hover:text-[#4A3B32] transition-colors">
               <Instagram className="h-5 w-5" /> Follow Us
             </a>
           </div>
@@ -202,17 +202,13 @@ export default function Experience() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
              {INSTA_GRID.map((src, i) => (
                <div key={i} className="group relative aspect-square overflow-hidden bg-black/20 border border-[#F4EBD9]/10">
-                 <img src={src} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" alt="Instagram Post" />
-                 {/* Overlay */}
-                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Instagram className="h-8 w-8 text-[#F4EBD9]" />
-                 </div>
-               </div>
+                 <img src={src} className="w-full h-full object-cover opacity-80" alt="Instagram Post" />
+              </div>
              ))}
           </div>
 
           <div className="mt-12 text-center md:hidden">
-             <a href="https://instagram.com" className="inline-flex items-center gap-2 text-[#D97706] font-heading text-xl border-b border-[#D97706] pb-1">
+             <a href="https://www.instagram.com/motherindiatravels/" className="inline-flex items-center gap-2 text-[#D97706] font-heading text-xl border-b border-[#D97706] pb-1">
                Follow on Instagram &rarr;
              </a>
           </div>

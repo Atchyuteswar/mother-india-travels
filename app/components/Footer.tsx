@@ -1,17 +1,25 @@
 'use client';
 
 import React from 'react';
-import { Facebook, Instagram, Twitter, MapPin, Mail, Phone, ArrowRight } from 'lucide-react';
+import { Facebook, Instagram, Twitter, MapPin, Mail, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const Footer = () => {
+  // Define the navigation links here
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Experience', href: '/experience' },
+  ];
+
   return (
     <footer className="bg-[#4A3B32] text-[#F4EBD9] pt-20 pb-10 border-t-8 border-[#D97706]">
       <div className="mx-auto max-w-7xl px-6">
         
+        {/* Main Grid Layout */}
         <div className="grid gap-12 md:grid-cols-4 mb-16">
           
-          {/* Column 1: Brand */}
+          {/* Column 1: Brand & Socials (Spans 2 columns) */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="inline-block mb-6">
               <h2 className="font-heading text-4xl text-[#F4EBD9] tracking-wide">
@@ -22,22 +30,25 @@ const Footer = () => {
               "To travel is to discover that everyone is wrong about other countries."
             </p>
             <div className="flex gap-4">
-              {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="h-10 w-10 flex items-center justify-center rounded-full border border-[#F4EBD9]/20 hover:bg-[#D97706] hover:border-[#D97706] transition-all text-[#F4EBD9]">
+              {[Instagram].map((Icon, i) => (
+                <a key={i} href="https://www.instagram.com/motherindiatravels/" className="h-10 w-10 flex items-center justify-center rounded-full border border-[#F4EBD9]/20 hover:bg-[#D97706] hover:border-[#D97706] transition-all text-[#F4EBD9]">
                   <Icon className="h-5 w-5" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Column 2: Navigation */}
+          {/* Column 2: Navigation (FIXED LINKS) */}
           <div>
             <h3 className="font-heading text-2xl text-[#D97706] mb-6">Explore</h3>
             <ul className="space-y-4 font-body text-lg text-[#F4EBD9]/70">
-              {['Home', 'Personalized Trips', 'The Experience', 'Journal', 'About Us'].map((item) => (
-                <li key={item}>
-                  <Link href="/" className="hover:text-[#F4EBD9] hover:pl-2 transition-all duration-300 block">
-                    {item}
+              {navLinks.map((item) => (
+                <li key={item.name}>
+                  <Link 
+                    href={item.href} 
+                    className="hover:text-[#F4EBD9] hover:pl-2 transition-all duration-300 block"
+                  >
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -50,7 +61,7 @@ const Footer = () => {
             <p className="font-body text-[#F4EBD9]/60 mb-6">
               Receive handwritten notes, travel guides, and early invites to our retreats.
             </p>
-            <form className="relative">
+            <form className="relative" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
                 placeholder="Your email address" 
