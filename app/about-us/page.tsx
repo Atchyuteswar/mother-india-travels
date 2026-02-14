@@ -29,7 +29,6 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <span className="text-[#F4EBD9] font-heading tracking-widest text-xl mb-4 block">Est. 2024</span>
             <h1 className="font-heading text-7xl md:text-9xl text-[#F4EBD9] drop-shadow-lg mb-6">
               The Soul of India
             </h1>
@@ -156,7 +155,7 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-12 text-left">
             <div className="space-y-6 border-r border-[#D97706]/30 pr-6">
-              <h3 className="font-heading text-3xl text-[#D97706]">The Tourist</h3>
+              <h3 className="font-body font-bold text-3xl text-[#D97706]">The Tourist</h3>
               <ul className="font-body text-lg opacity-70 space-y-4 list-disc pl-5">
                 <li>Sees India through a bus window.</li>
                 <li>Eats at continental buffets.</li>
@@ -165,7 +164,7 @@ export default function About() {
               </ul>
             </div>
             <div className="space-y-6 pl-6">
-              <h3 className="font-heading text-3xl text-[#F4EBD9]">The Mother India Traveler</h3>
+              <h3 className="font-body font-bold text-3xl text-[#F4EBD9]">The Mother India Traveler</h3>
               <ul className="font-body text-lg space-y-4 list-disc pl-5 text-[#F4EBD9]">
                 <li>Walks the alleyways to find hidden temples.</li>
                 <li>Breaks bread with local families.</li>
@@ -203,7 +202,7 @@ export default function About() {
               </p>
 
               <div className="border-t border-[#D97706]/20 pt-4 text-center">
-                <h4 className="font-heading text-2xl text-[#4A3B32]">Laura</h4>
+                <h4 className="font-body font-bold text-2xl text-[#4A3B32]">Laura</h4>
                 <p className="text-xs uppercase tracking-widest text-[#D97706] mt-1">Trip to North India 2022</p>
               </div>
             </div>
@@ -222,7 +221,7 @@ export default function About() {
               </p>
 
               <div className="border-t border-[#D97706]/20 pt-4 text-center">
-                <h4 className="font-heading text-2xl text-[#4A3B32]">Carolina</h4>
+                <h4 className="font-body font-bold text-2xl text-[#4A3B32]">Carolina</h4>
                 <p className="text-xs uppercase tracking-widest text-[#D97706] mt-1">Trip to North India 2022</p>
               </div>
             </div>
@@ -241,7 +240,7 @@ export default function About() {
               </p>
 
               <div className="border-t border-[#D97706]/20 pt-4 text-center">
-                <h4 className="font-heading text-2xl text-[#4A3B32]">Elsa</h4>
+                <h4 className="font-body font-bold text-2xl text-[#4A3B32]">Elsa</h4>
                 <p className="text-xs uppercase tracking-widest text-[#D97706] mt-1">Trip to North India 2022</p>
               </div>
             </div>
@@ -273,7 +272,7 @@ export default function About() {
           <div className="md:w-1/2">
              <div className="flex items-center gap-2 mb-4 text-[#D97706]">
                 <HandHeart className="w-6 h-6" />
-                <span className="font-heading tracking-widest uppercase text-lg">Our Dharma</span>
+                <span className="font-body font-bold tracking-widest uppercase text-lg">Our Dharma</span>
              </div>
              <h2 className="font-heading text-5xl mb-6">Empowering the Hands that Create</h2>
              <p className="font-body text-xl opacity-80 mb-6 leading-relaxed">
