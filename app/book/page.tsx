@@ -32,17 +32,17 @@ export default function PersonalizedTrips() {
           <form className="space-y-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="font-heading text-xl text-[#4A3B32]">Traveler's Name</label>
+                <label className="font-body font-bold text-xl text-[#4A3B32]">Traveler's Name</label>
                 <input type="text" className="w-full bg-transparent border-b border-[#4A3B32]/40 py-2 focus:outline-none focus:border-[#D97706] font-body text-xl" />
               </div>
               <div className="space-y-2">
-                <label className="font-heading text-xl text-[#4A3B32]">Email Address</label>
+                <label className="font-body font-bold text-xl text-[#4A3B32]">Email Address</label>
                 <input type="email" className="w-full bg-transparent border-b border-[#4A3B32]/40 py-2 focus:outline-none focus:border-[#D97706] font-body text-xl" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="font-heading text-xl text-[#4A3B32]">Destinations of Interest</label>
+              <label className="font-body font-bold text-xl text-[#4A3B32]">Destinations of Interest</label>
               <select className="w-full bg-transparent border-b border-[#4A3B32]/40 py-2 focus:outline-none font-body text-xl text-[#4A3B32]">
                 <option>Rajasthan (Forts & Palaces)</option>
                 <option>Kerala (Backwaters & Tea)</option>
@@ -53,7 +53,7 @@ export default function PersonalizedTrips() {
             </div>
 
             <div className="space-y-2">
-              <label className="font-heading text-xl text-[#4A3B32]">Your Vision</label>
+              <label className="font-body font-bold text-xl text-[#4A3B32]">Your Vision</label>
               <textarea 
                 rows={4}
                 placeholder="Describe your dream trip..."
