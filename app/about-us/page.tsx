@@ -15,7 +15,7 @@ export default function About() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden border-b border-[#4A3B32]/10">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1519923041107-e4dc8d9193da?q=80&w=1920&auto=format&fit=crop"
+            src="/about-us/about-us-cover.jpg"
             alt="Varanasi Boats"
             className="w-full h-full object-cover sepia-[.3]"
           />
