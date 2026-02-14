@@ -220,8 +220,8 @@ const ReelsSection = () => {
 
                 {/* Text Title */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent pt-12">
-                   <p className="text-[#D97706] font-bold text-xs uppercase tracking-widest mb-1">{reel.category}</p>
-                   <h3 className="font-heading text-2xl text-[#F4EBD9] leading-tight">{reel.title}</h3>
+                   <p className="text-[#D97706] text-xs uppercase tracking-widest mb-1">{reel.category}</p>
+                   <h3 className="font-body font-bold text-2xl text-[#F4EBD9] leading-tight">{reel.title}</h3>
                 </div>
               </div>
             </motion.div>

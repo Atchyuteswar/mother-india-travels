@@ -97,7 +97,7 @@ export default function Experience() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <span className="text-[#F4EBD9] font-heading tracking-widest text-xl mb-4 block opacity-90">
+            <span className="text-[#F4EBD9] font-body font-bold tracking-widest text-xl mb-4 block opacity-90">
               Curated by Leo & Tanu
             </span>
             <h1 className="font-heading text-7xl md:text-9xl text-[#F4EBD9] drop-shadow-lg mb-8">
@@ -131,7 +131,7 @@ export default function Experience() {
                   </div>
                 </div>
                 {/* Label (Changed to Light Color for Dark Background) */}
-                <span className="font-heading text-[#F4EBD9] text-lg tracking-wide drop-shadow-md group-hover:text-[#D97706] transition-colors">
+                <span className="font-body font-bold text-lg tracking-wide drop-shadow-md group-hover:text-[#D97706] transition-colors">
                   {story.label}
                 </span>
               </a>
@@ -159,7 +159,7 @@ export default function Experience() {
               <div className="h-48 overflow-hidden mb-6 border border-[#4A3B32]/10">
                 <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover sepia-[.3] group-hover:scale-110 transition-transform duration-700" alt="Spices" />
               </div>
-              <h3 className="font-heading text-3xl text-[#4A3B32] mb-2">Taste</h3>
+              <h3 className="font-body font-bold text-3xl text-[#4A3B32] mb-2">Taste</h3>
               <p className="font-body text-lg text-[#4A3B32]/80">From the fiery curries of the south to the sweet saffron milk of the north. We eat where the locals eat.</p>
             </div>
 
@@ -168,7 +168,7 @@ export default function Experience() {
               <div className="h-48 overflow-hidden mb-6 border border-[#4A3B32]/10">
                 <img src="https://images.unsplash.com/photo-1516216628859-9bccecab13ca?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover sepia-[.3] group-hover:scale-110 transition-transform duration-700" alt="Bells" />
               </div>
-              <h3 className="font-heading text-3xl text-[#4A3B32] mb-2">Sound</h3>
+              <h3 className="font-body font-bold text-3xl text-[#4A3B32] mb-2">Sound</h3>
               <p className="font-body text-lg text-[#4A3B32]/80">The morning temple bells, the chaotic symphony of rickshaws, and the silence of the Himalayas.</p>
             </div>
 
@@ -177,7 +177,7 @@ export default function Experience() {
               <div className="h-48 overflow-hidden mb-6 border border-[#4A3B32]/10">
                 <img src="https://images.unsplash.com/photo-1606293926075-69a00febf280?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover sepia-[.3] group-hover:scale-110 transition-transform duration-700" alt="Touch" />
               </div>
-              <h3 className="font-heading text-3xl text-[#4A3B32] mb-2">Touch</h3>
+              <h3 className="font-body font-bold text-3xl text-[#4A3B32] mb-2">Touch</h3>
               <p className="font-body text-lg text-[#4A3B32]/80">Feel the cool marble of the Taj, the rough sandstone of forts, and the soft Pashmina silk.</p>
             </div>
           </div>
