@@ -56,7 +56,7 @@ const FeaturedTrips = () => {
                 {/* Section Header */}
                 <div className="text-center mb-20">
                     <div className="flex items-center justify-center gap-3 mb-2 text-[#D97706]">
-                        <span className="font-heading tracking-widest uppercase text-md">Upcoming Departures</span>
+                        <span className="font-body tracking-widest uppercase text-md">Upcoming Departures</span>
                     </div>
                     <h2 className="font-heading text-6xl text-[#4A3B32] mb-6">Journeys & Retreats</h2>
                     <div className="w-24 h-1 bg-[#D97706] mx-auto rounded-full opacity-60" />
@@ -87,18 +87,6 @@ const FeaturedTrips = () => {
                                             className="w-full h-full object-cover sepia-[.15] group-hover:sepia-0 transition-all duration-1000 group-hover:scale-110"
                                         />
                                     </div>
-
-                                    {/* Overlay Date Badge */}
-                                    <div className="absolute top-6 left-6 bg-[#F4EBD9] text-[#4A3B32] px-2 py-1 font-heading tracking-widest uppercase text-xs border border-[#4A3B32]/20 shadow-lg">
-                                        {trip.dates}
-                                    </div>
-
-                                    {/* "View Trip" Overlay on Hover */}
-                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                        <div className="border border-[#F4EBD9] px-8 py-3 text-[#F4EBD9] font-heading uppercase tracking-widest backdrop-blur-sm">
-                                            View Itinerary
-                                        </div>
-                                    </div>
                                 </div>
 
                                 {/* Decorative Shadow Box behind */}
@@ -118,8 +106,9 @@ const FeaturedTrips = () => {
                                 </div>
 
                                 <div>
+                                    <p className="font-body mb-4 text-xl text-[#D97706] italic">{trip.dates}</p>
                                     <h3 className="font-heading text-5xl text-[#4A3B32] mb-2">{trip.title}</h3>
-                                    <p className="font-heading text-xl text-[#D97706] italic">{trip.subtitle}</p>
+                                    <p className="font-body font-bold text-xl text-[#D97706] italic">{trip.subtitle}</p>
                                 </div>
 
                                 <div className="flex items-center justify-center lg:justify-start gap-2 text-[#4A3B32]/70 font-body">
@@ -141,7 +130,7 @@ const FeaturedTrips = () => {
                                         href={trip.document}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-[#4A3B32] text-[#F4EBD9] px-6 py-3 rounded-sm font-heading tracking-widest uppercase text-sm hover:bg-[#D97706] transition-colors flex items-center gap-2 group"
+                                        className="bg-[#4A3B32] text-[#F4EBD9] px-6 py-3 rounded-sm font-body tracking-widest uppercase text-sm hover:bg-[#D97706] transition-colors flex items-center gap-2 group"
                                     >
                                         Explore <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </Link>

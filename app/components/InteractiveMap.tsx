@@ -81,7 +81,7 @@ const InteractiveMap = () => {
         <div className="mb-12 text-center">
           <div className="inline-flex items-center gap-2 mb-2 text-[#D97706]">
              <MapIcon className="h-5 w-5" />
-             <span className="font-heading tracking-widest uppercase text-sm">Interactive Guide</span>
+             <span className="font-body tracking-widest uppercase text-sm">Interactive Guide</span>
           </div>
           <h2 className="font-heading text-6xl text-[#4A3B32] mb-4 drop-shadow-sm">The Land of Legends</h2>
           <p className="font-body text-xl text-[#4A3B32]/70 italic">"Select a marker to uncover the journey."</p>
