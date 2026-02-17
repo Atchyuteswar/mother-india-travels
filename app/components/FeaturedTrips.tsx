@@ -106,9 +106,9 @@ const FeaturedTrips = () => {
                                 </div>
 
                                 <div>
-                                    <p className="font-body mb-4 text-xl text-[#D97706] italic">{trip.dates}</p>
+                                    <p className="font-body mb-4 text-xl text-[#D97706]">{trip.dates}</p>
                                     <h3 className="font-heading text-5xl text-[#4A3B32] mb-2">{trip.title}</h3>
-                                    <p className="font-body font-bold text-xl text-[#D97706] italic">{trip.subtitle}</p>
+                                    <p className="font-body font-bold text-xl text-[#D97706]">{trip.subtitle}</p>
                                 </div>
 
                                 <div className="flex items-center justify-center lg:justify-start gap-2 text-[#4A3B32]/70 font-body">

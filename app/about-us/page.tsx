@@ -120,10 +120,10 @@ export default function About() {
             <h2 className="font-heading text-6xl text-[#4A3B32] mb-8">Tanu</h2>
             <div className="font-body text-xl text-[#4A3B32]/80 space-y-6 leading-relaxed text-justify">
               <p>
-                Born and raised in the heart of the motherland, Tanu is the grounding force of our journeys. With a smile that opens doors and a spirit that navigates chaos with grace, he ensures that every traveler feels safe, welcomed, and seen.
+                Having grown up in different corners of India, and amidst India's diverse landscapes and communities has given him an unparalleled understanding of its cultures, languages, and traditions.
               </p>
               <p>
-                More than just a guide, Tanu is a storyteller of the streets, a keeper of local secrets, and the brother you never knew you had in India. He bridges the gap between observer and participant, turning strangers into family.
+                As a Journalist with extensive experience traveling across the nation, Tanu's storytelling reflects a deeply personal connection to India's spirit. Tanu brings travelers closer to the essence of India, Sharing authentic insights into its spiritual and cultural heritage. Simply put, Tanu embodies India in all its complexity and beauty.
               </p>
             </div>
           </div>

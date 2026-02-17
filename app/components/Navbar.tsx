@@ -25,17 +25,20 @@ const Navbar = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
 
         {/* Logo - Rozha One Font */}
-        <Link href="/" className="text-2xl font-bold text-[#F4EBD9] font-heading tracking-wide">
-          Mother India <span className="text-[#D97706]">Travels</span>
+        <Link href="/" className={`text-2xl font-bold font-heading tracking-wide ${scrolled ? 'text-[#B45309]' : 'text-[#F4EBD9]'}`}>
+          Mother India <span className={`text-[#B45309] ${scrolled ? 'text-[#B45309]' : 'text-[#B45309]'}`}>Travels</span>
         </Link>
 
         {/* Desktop Menu - Cormorant Font */}
         <div className="hidden md:flex items-center gap-10">
-          {['About Us', 'Experience'].map((item) => (
+          {['Home', 'Experience', 'About Us'].map((item) => (
             <Link
               key={item}
               href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
-              className="text-lg font-bold text-[#F4EBD9] transition-colors font-body tracking-wide"
+              className={`text-lg font-bold transition-colors font-body tracking-wide ${scrolled
+                ? 'text-[#B45309]'
+                : 'text-[#F4EBD9]'
+                }`}
             >
               {item}
             </Link>
@@ -43,7 +46,10 @@ const Navbar = () => {
 
           {/* Classic "Stamp" Button style */}
           <Link href="/book">
-            <button className="border border-[#F4EBD9] px-6 py-2 text-sm font-bold text-[#F4EBD9] uppercase tracking-widest hover:bg-[#4A3B32] hover:text-[#F4EBD9] transition-all duration-300 font-body">
+            <button className={`px-6 py-2 text-sm font-bold uppercase tracking-widest transition-all duration-300 font-body ${scrolled
+              ? 'text-[#B45309] border border-[#B45309]'
+              : 'text-[#F4EBD9] border border-[#F4EBD9]'
+              }`}>
               Book Now
             </button>
           </Link>
@@ -65,17 +71,17 @@ const Navbar = () => {
             className="md:hidden bg-[#F4EBD9] border-b border-[#4A3B32]/20 overflow-hidden"
           >
             <div className="flex flex-col gap-6 p-8 text-center">
-              {['About Us', 'The Experience'].map((item) => (
+              {['Home', 'Experience', 'About Us'].map((item) => (
                 <Link
                   key={item}
                   href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
                   onClick={() => setIsOpen(false)}
-                  className="text-[#F4EBD9] text-2xl font-heading hover:text-[#D97706]"
+                  className="text-[#B45309] text-2xl font-heading"
                 >
                   {item}
                 </Link>
               ))}
-              <Link href="/book" onClick={() => setIsOpen(false)} className="text-[#D97706] text-xl font-body font-bold uppercase tracking-widest mt-4">
+              <Link href="/book" onClick={() => setIsOpen(false)} className="text-[#B45309] border p-2 m-2 text-xl font-body font-bold uppercase tracking-widest">
                 Book a Trip
               </Link>
             </div>
