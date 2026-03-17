@@ -128,7 +128,7 @@ const InteractiveMap = () => {
             <div className="relative w-full h-full max-w-[600px] max-h-[600px] rounded-full overflow-hidden border-4 border-[#E6D5C0] shadow-2xl">
                
               {/* REMEMBER: Replace 'YOUR_API_KEY' with your actual key */}
-              <LoadScript googleMapsApiKey="AIzaSyDhQ9Hdj4_TZ5utKX9uGfneBLavYku0Hi4">
+              <LoadScript googleMapsApiKey="AIzaSyAQ13MMz7s8JAU6DpG_k1bR912YRDEceoc">
                 <GoogleMap
                   mapContainerStyle={containerStyle}
                   center={center}

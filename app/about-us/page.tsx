@@ -39,7 +39,7 @@ export default function About() {
       {/* 2. THE ORIGIN STORY (From your Image 1) */}
       <section className="py-24 px-6 relative overflow-hidden">
         {/* Background Texture similar to your image */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/cream-paper.png')" }} />
+        <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: "url(https://www.transparenttextures.com/patterns/cream-paper.png)" }} />
 
         <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center gap-16">
           {/* Text Side */}
@@ -147,7 +147,7 @@ export default function About() {
 
       {/* --- NEW SECTION 1: THE MANIFESTO (Philosophy) --- */}
       <section className="py-24 px-6 bg-[#4A3B32] text-[#F4EBD9] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] pointer-events-none" />
+        <div className="absolute inset-0 opacity-10 bg-[url(https://www.transparenttextures.com/patterns/wood-pattern.png)] pointer-events-none" />
 
         <div className="mx-auto max-w-4xl text-center relative z-10">
           <Leaf className="w-12 h-12 mx-auto mb-6 text-[#D97706]" />
@@ -178,7 +178,7 @@ export default function About() {
 
       <section className="py-24 px-6 relative bg-[#E6D5C0]/30">
         {/* Background Texture */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/cream-paper.png')" }} />
+        <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url(https://www.transparenttextures.com/patterns/cream-paper.png)" }} />
 
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16">

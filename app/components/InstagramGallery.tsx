@@ -3,12 +3,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Camera } from 'lucide-react';
+import VaranasiGhats from '../../public/visual-archive/varanasi-ghats.jpg';
+import HimalayanMorning from '../../public/visual-archive/himalayan-morning.jpg';
+import LocalChai from '../../public/visual-archive/local-chai.jpg';
+import AmberFort from '../../public/visual-archive/amber-fort.jpg';
 
 const POSTS = [
-  { id: 1, src: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80", caption: "Varanasi Ghats", rotate: "-2deg" },
-  { id: 2, src: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80", caption: "Himalayan Morning", rotate: "1deg" },
-  { id: 3, src: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80", caption: "Local Chai", rotate: "-1deg" },
-  { id: 4, src: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80", caption: "Amber Fort", rotate: "2deg" },
+  { id: 1, src: VaranasiGhats, caption: "Varanasi Ghats", rotate: "-2deg" },
+  { id: 2, src: HimalayanMorning, caption: "Himalayan Morning", rotate: "1deg" },
+  { id: 3, src: LocalChai, caption: "Local Chai", rotate: "-1deg" },
+  { id: 4, src: AmberFort, caption: "Amber Fort", rotate: "2deg" },
 ];
 
 const InstagramGallery = () => {
@@ -16,7 +20,7 @@ const InstagramGallery = () => {
     <section className="py-24 bg-[#E6D5C0] relative overflow-hidden">
       
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none" />
+      <div className="absolute inset-0 opacity-5 bg-[url(https://www.transparenttextures.com/patterns/cubes.png)] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 relative z-10">
         
@@ -49,7 +53,7 @@ const InstagramGallery = () => {
               {/* Image */}
               <div className="h-64 w-full overflow-hidden bg-gray-100 mb-4 border border-gray-200">
                 <img 
-                  src={post.src} 
+                  src={post.src.src} 
                   alt={post.caption} 
                   className="h-full w-full object-cover filter sepia-[.2] group-hover:sepia-0 transition-all duration-500"
                 />

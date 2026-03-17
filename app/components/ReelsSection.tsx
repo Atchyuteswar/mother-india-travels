@@ -173,7 +173,7 @@ const ReelsSection = () => {
     <section className="bg-[#4A3B32] py-24 overflow-hidden relative border-t border-[#F4EBD9]/10">
       
       {/* Background Texture */}
-      <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] pointer-events-none" />
+      <div className="absolute inset-0 opacity-10 bg-[url(https://www.transparenttextures.com/patterns/wood-pattern.png)] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         

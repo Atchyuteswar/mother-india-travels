@@ -49,7 +49,7 @@ const FeaturedTrips = () => {
         <section className="py-24 px-6 bg-[#F4EBD9] relative overflow-hidden">
 
             {/* Background Texture */}
-            <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] pointer-events-none" />
+            <div className="absolute inset-0 opacity-5 bg-[url(https://www.transparenttextures.com/patterns/wood-pattern.png)] pointer-events-none" />
 
             <div className="mx-auto max-w-7xl relative z-10">
 

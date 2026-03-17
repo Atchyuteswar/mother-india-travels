@@ -186,7 +186,7 @@ export default function Experience() {
 
       {/* 6. INSTAGRAM GRID (The Visual Diary) */}
       <section className="py-24 px-6 bg-[#4A3B32] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none" />
+        <div className="absolute inset-0 opacity-5 bg-[url(https://www.transparenttextures.com/patterns/cubes.png)] pointer-events-none" />
         
         <div className="mx-auto max-w-6xl relative z-10">
           <div className="flex items-center justify-between mb-12 text-[#F4EBD9]">

@@ -7,7 +7,7 @@ const Newsletter = () => {
   return (
     <section className="bg-[#4A3B32] py-24 px-6 relative overflow-hidden">
       {/* Background Texture */}
-      <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')] pointer-events-none" />
+      <div className="absolute inset-0 opacity-5 bg-[url(https://www.transparenttextures.com/patterns/black-paper.png)] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center border border-[#D97706]/30 p-8 md:p-12 outline outline-1 outline-[#4A3B32] outline-offset-8">
         <Mail className="h-10 w-10 text-[#D97706] mx-auto mb-6" />
